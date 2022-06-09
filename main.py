@@ -1,10 +1,9 @@
 import sys
 
-
 class CliParser(object):
     def __init__(self, argv):
         self.args = argv[1:]
-        self.defaults = {"--profile": "beta", "--use-bucket": "yes"}
+        self.defaults = {"--parameter1": "no", "--parameter2": "Hello!"}
         self.options = []
         self.values = []
         self.parameters = {}
@@ -36,6 +35,11 @@ class CliParser(object):
 
 
 if __name__ == "__main__":
+
     cli = CliParser(sys.argv)
-    print(cli.to_bool(cli.param("--use-bucket")))
-    print(cli.param("--environment"))
+
+    bool_parameter = cli.to_bool(cli.param("--parameter1"))
+    string_parameter = cli.param("--parameter2")
+
+    print(bool_parameter)
+    print(string_parameter)

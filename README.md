@@ -1,3 +1,7 @@
+## Simple Cli
+
+If you dont want to install additional modules to parse your command line arguments, just copy and pase the CliParser class and start working with your scripts.
+
 ### Usage
 
 Invoke your main script with
